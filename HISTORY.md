@@ -5,16 +5,18 @@
 ### 2023-06-11
 
 - Create basic project configuration, scaffolding a React app with Vite and including Sass and Storybook as dependencies
+- Configure the Design System base with fonts, colors and spacings -> Use [existing design system](#technical-choices) as reference
 
-## Planned next steps
+## Planned steps
 
-- Build the Design System base with fonts, colors and spacings -> Use existing design system as reference
-- Create base components to be used inside the TreeView component
-- Create the TreeView components along with tests
+- Create base components to be used inside the TreeView component (along with unit tests)
+- Create the TreeView components along with unit tests
 - Document the component appropriately on Storybook
 - Create Cypress config
 - Create Cypress tests
 
 ## Technical choices
 
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) is being used as a framework to keep the commits organized
 - Vite was chosen for its speed and configuration simplicity
+- Gov.br was chosen as a design system base because it is built with Sass, which makes the integration easier, and it shares a lot of the colors with the target company.
