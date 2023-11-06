@@ -1,11 +1,41 @@
-import React from 'react';
+import React, { useState } from "react";
 
-export const Checkbox = (
-{name = 'Test', label, disabled = false, checked = false}) => {
+type CheckboxProps = {
+  id: string;
+  onChange: () => void;
+  name?: string;
+  label?: string;
+  checked?: boolean;
+  disabled?: boolean;
+};
+
+export const Checkbox = ({
+  id,
+  onChange,
+  name,
+  label,
+  checked = false,
+  disabled = false,
+}: CheckboxProps) => {
+  const [checkedState, setCheckedState] = useState(checked);
+  const htmlFor = id || name;
+
+  const handleChange = () => {
+    setCheckedState(!checkedState);
+  };
+
   return (
     <div>
-      <label htmlFor={id || name}>{label}</label>
-      <input type="checkbox" name={name} id={id || name} disabled={disabled} aria-disabled={disabled} checked={checked}/>
+      <input
+        type="checkbox"
+        name={name}
+        id={htmlFor}
+        disabled={disabled}
+        aria-disabled={disabled}
+        checked={checkedState}
+        onChange={onChange || handleChange}
+      />
+      <label htmlFor={htmlFor}>{label}</label>
     </div>
-    );
-}
+  );
+};
