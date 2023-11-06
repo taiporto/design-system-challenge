@@ -1,0 +1,16 @@
+@import "/node_modules/@govbr-ds/core/src/partial/scss/core-base.scss";
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden; 
+}
