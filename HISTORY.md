@@ -19,7 +19,7 @@
 ## Planned steps
 
 - Create the TreeView components along with unit tests
-- Document the component appropriately on Storybook
+- Document the components appropriately on Storybook
 - Create Cypress config
 - Create Cypress tests
 
