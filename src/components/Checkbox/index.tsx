@@ -7,6 +7,7 @@ import { CheckboxProps } from "./types";
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   id,
+  value,
   name,
   label,
   checked = false,
@@ -25,6 +26,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     <div className={styles["br-checkbox"]}>
       <CheckboxInput
         id={htmlFor}
+        value={value}
         name={name}
         disabled={disabled}
         checked={checkedState}
