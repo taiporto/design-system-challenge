@@ -2,7 +2,7 @@
 
 ## History
 
-### 2023-06-11
+### 2023-11-06
 
 - Create basic project configuration, scaffolding a React app with Vite and including Sass and Storybook as dependencies
 - Configure the Design System base with fonts, colors and spacings -> Use [existing design system](#technical-choices) as reference
