@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@govbr-ds/core": "^3.4.1",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-icons": "^1.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
