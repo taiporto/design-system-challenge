@@ -3,16 +3,7 @@ import React, { useState } from "react";
 import { CheckboxInput } from "./components/CheckboxInput";
 
 import styles from "./style.module.scss";
-
-type CheckboxProps = {
-  id: string;
-  onChange?: () => void;
-  name?: string;
-  label?: string;
-  checked?: boolean;
-  disabled?: boolean;
-  indeterminate?: boolean;
-};
+import { CheckboxProps } from "./types";
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   id,
