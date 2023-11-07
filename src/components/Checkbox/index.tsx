@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 
+import { CheckboxInput } from "./components/CheckboxInput";
+
+import styles from "./style.module.scss";
+
 type CheckboxProps = {
   id: string;
-  onChange: () => void;
+  onChange?: () => void;
   name?: string;
   label?: string;
   checked?: boolean;
   disabled?: boolean;
+  indeterminate?: boolean;
 };
 
-export const Checkbox = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
   id,
-  onChange,
   name,
   label,
   checked = false,
   disabled = false,
-}: CheckboxProps) => {
+  onChange,
+  indeterminate = false,
+}: CheckboxProps): React.ReactElement => {
   const [checkedState, setCheckedState] = useState(checked);
   const htmlFor = id || name;
 
@@ -25,17 +31,18 @@ export const Checkbox = ({
   };
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        name={name}
+    <div className={styles["br-checkbox"]}>
+      <CheckboxInput
         id={htmlFor}
+        name={name}
         disabled={disabled}
-        aria-disabled={disabled}
         checked={checkedState}
-        onChange={onChange || handleChange}
+        onChange={onChange ?? handleChange}
+        indeterminate={indeterminate}
       />
-      <label htmlFor={htmlFor}>{label}</label>
+      <label className={styles.checkboxLabel} htmlFor={htmlFor}>
+        {label}
+      </label>
     </div>
   );
 };

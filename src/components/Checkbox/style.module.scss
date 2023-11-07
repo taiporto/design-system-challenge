@@ -1,0 +1,11 @@
+@import "/node_modules/@govbr-ds/core/src/partial/scss/core-base.scss";
+@import "/node_modules/@govbr-ds/core/src/components/checkbox/checkbox";
+
+.checkboxContainer {
+  @include checkbox-configs;
+}
+
+.checkboxLabel {
+  display: flex !important;
+  align-items: center;
+}
