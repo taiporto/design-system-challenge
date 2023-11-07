@@ -21,7 +21,7 @@ export const Collapsible = ({
   return (
     <RadixCollapsible.Root open={open} onOpenChange={setOpen}>
       <RadixCollapsible.Trigger asChild>
-        <div className={`${styles["d-flex"]}`}>
+        <div className={`${styles["d-flex"]} ${styles["align-items-center"]}`}>
           <button
             className={`${styles["mr-1"]} ${styles["br-button"]} ${styles["circle"]}`}
           >
