@@ -28,3 +28,5 @@
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) is being used as a framework to keep the commits organized
 - Vite was chosen for its speed and configuration simplicity
 - Gov.br was chosen as a design system base because it is built with Sass, which makes the integration easier, and it shares a lot of the colors with the target company.
+- The usage of the Radix UI checkbox primitive was considered, but since it doesn't use with the `input` element by default, although it guarantees 100% accessibility despite not using it, it was smarter to work with a default `input` + `label` element combo and use the styles already provided by the Gov.br Design System.
+- Radix UI's Collapsible was chosen because it handles aria controls over what is opened or closed by itself, ensuring accessibility standards.
