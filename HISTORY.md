@@ -2,14 +2,22 @@
 
 ## History
 
+✅ - Done;
+🟨 - Doing;
+
 ### 2023-11-06
 
-- Create basic project configuration, scaffolding a React app with Vite and including Sass and Storybook as dependencies
-- Configure the Design System base with fonts, colors and spacings -> Use [existing design system](#technical-choices) as reference
+- ✅ Create basic project configuration, scaffolding a React app with Vite and including Sass and Storybook as dependencies
+- ✅ Configure the Design System base with fonts, colors and spacings -> Use [existing design system](#technical-choices) as reference
+- 🟨 Create base components to be used inside the TreeView component (along with unit tests)
+
+### 2023-11-07
+
+- 🟨 Create base components to be used inside the TreeView component (along with unit tests)
+- 🟨 Create the TreeView components along with unit tests
 
 ## Planned steps
 
-- Create base components to be used inside the TreeView component (along with unit tests)
 - Create the TreeView components along with unit tests
 - Document the component appropriately on Storybook
 - Create Cypress config
