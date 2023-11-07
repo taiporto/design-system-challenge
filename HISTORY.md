@@ -9,11 +9,11 @@
 
 - ✅ Create basic project configuration, scaffolding a React app with Vite and including Sass and Storybook as dependencies
 - ✅ Configure the Design System base with fonts, colors and spacings -> Use [existing design system](#technical-choices) as reference
-- 🟨 Create base components to be used inside the TreeView component (along with unit tests)
+- 🟨 Create base components to be used inside the TreeView component
 
 ### 2023-11-07
 
-- 🟨 Create base components to be used inside the TreeView component (along with unit tests)
+- 🟨 Create base components to be used inside the TreeView component
 - 🟨 Create the TreeView components along with unit tests
 
 ## Planned steps
