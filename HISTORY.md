@@ -16,6 +16,10 @@
 - 🟨 Create base components to be used inside the TreeView component
 - 🟨 Create the TreeView components along with unit tests
 
+### 2023-11-08
+- 🟨 Create the TreeView components along with unit tests;
+  - 🟨 Create TreeView checkbox nodes logic;
+
 ## Planned steps
 
 - Create the TreeView components along with unit tests
@@ -30,3 +34,52 @@
 - Gov.br was chosen as a design system base because it is built with Sass, which makes the integration easier, and it shares a lot of the colors with the target company.
 - The usage of the Radix UI checkbox primitive was considered, but since it doesn't use with the `input` element by default, although it guarantees 100% accessibility despite not using it, it was smarter to work with a default `input` + `label` element combo and use the styles already provided by the Gov.br Design System.
 - Radix UI's Collapsible was chosen because it handles aria controls over what is opened or closed by itself, ensuring accessibility standards.
+
+## Technical challenges
+
+- Creating the TreeView logic is hard and it required some research to ensure the component kept its performance while allowing for a simple and clear code.
+  - I'm having doubts about using the "React way" as a strategy for keeping track of child and parent nodes. Maybe it will be easier and more straightforward to work directly with the DOM methods.
+
+## Technical planning
+
+- Expected behavior of tree view nodes:
+  - Parent node:
+    - If it is checked, all of its children nodes should be checked
+    - If it is unchecked, all of its children nodes should be unchecked
+    - If not all of its children are checked, it should have an `indeterminate` attribute set to `true`
+    - When it has an `indeterminate` attribute:
+      - If it is clicked:
+        - It should change its state to `checked === false`
+        - It should have the `indeterminate` attribute removed
+        - All of its children should then be `checked === false`, replicating the parent's state
+    - When it is `checked === true`:
+      - If it is clicked:
+        - It should change its state to `checked === false`
+        - All of its children should then be `checked === false`, replicating the parent's state
+    - When it is `checked === false`:
+      - If it is clicked:
+        - It should change its state to `checked === true`
+        - All of its children should then be `checked === true`, replicating the parent's state
+  - Child node:
+    - If it is `checked === false` and it is clicked:
+      - It should be `checked === true`
+      - If the parent was previously `checked === false`:
+        - The parent should now have an `indeterminate` attribute set to it
+        - The parent should now be `checked === undefined`
+      - If the parent was previously `indeterminate`:
+        - Check if all of the child's node siblings are checked:
+          - If yes, change the parent to `checked === true` and remove its indeterminate attribute
+          - If no, make no changes to the parent
+    - If it is `checked === true` and it is clicked:
+      - It should be `checked === false`
+      - If the parent was previously `checked === true`:
+        - The parent should now have an `indeterminate` attribute set to it
+        - The parent should now be `checked === undefined`
+      - If the parent was previoulsy `indeterminate`:
+        - Check if all of the child's node siblings are unchecked:
+          - If yes, change the parent to `checked === false` and remove its indeterminate attribute
+          - If no, make no changes to the parent
+    - If it is `indeterminate` and it is clicked:
+      - It should be `checked === false`
+      - It should have its `indeterminate` attribute removed
+      - It should replicate the behavior to its parent

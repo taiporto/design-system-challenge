@@ -15,12 +15,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   onChange,
   indeterminate = false,
 }: CheckboxProps): React.ReactElement => {
-  const [checkedState, setCheckedState] = useState(checked);
   const htmlFor = id || name;
-
-  const handleChange = () => {
-    setCheckedState(!checkedState);
-  };
 
   return (
     <div className={styles["br-checkbox"]}>
@@ -29,9 +24,9 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         value={value}
         name={name}
         disabled={disabled}
-        checked={checkedState}
-        onChange={onChange ?? handleChange}
-        indeterminate={indeterminate}
+        checked={checked}
+        onChange={onChange}
+        indeterminate={indeterminate ? indeterminate.toString() : undefined}
       />
       <label className={styles.checkboxLabel} htmlFor={htmlFor}>
         {label}
