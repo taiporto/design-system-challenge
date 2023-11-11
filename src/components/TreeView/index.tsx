@@ -30,7 +30,6 @@ export const TreeView = ({ data }: TreeViewProps) => {
 
     setTreeViewData((prevTree) => {
       if (node.indeterminate) {
-        target.indeterminate = true;
         return handleNodeWasIndeterminate(target.id, prevTree);
       }
 

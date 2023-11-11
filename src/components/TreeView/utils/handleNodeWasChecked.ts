@@ -5,17 +5,17 @@ import { findNode } from "./findNode";
 export const handleNodeWasChecked = (
   nodeId: NodeData["id"],
   tree: NodeData[]
-) => {
-  const newTree = cloneTree(tree);
+): NodeData[] => {
+  let newTree = cloneTree(tree);
   const node = findNode(nodeId, newTree);
 
   if (node) {
     node.checked = true;
+    node.indeterminate = false;
 
     if (node.childrenNodes) {
       node.childrenNodes.forEach((node) => {
-        node.checked = true;
-        node.indeterminate = undefined;
+        newTree = handleNodeWasChecked(node.id, newTree);
       });
     }
 

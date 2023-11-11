@@ -6,7 +6,7 @@ export const handleNodeWasUnchecked = (
   nodeId: NodeData["id"],
   tree: NodeData[]
 ) => {
-  const newTree = cloneTree(tree);
+  let newTree = cloneTree(tree);
   const node = findNode(nodeId, newTree);
 
   if (node) {
@@ -14,8 +14,7 @@ export const handleNodeWasUnchecked = (
 
     if (node.childrenNodes) {
       node.childrenNodes.forEach((node) => {
-        node.checked = false;
-        node.indeterminate = false;
+        newTree = handleNodeWasUnchecked(node.id, newTree);
       });
     }
 

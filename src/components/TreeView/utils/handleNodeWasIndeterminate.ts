@@ -6,17 +6,18 @@ export const handleNodeWasIndeterminate = (
   nodeId: NodeData["id"],
   tree: NodeData[]
 ) => {
-  const newTree = cloneTree(tree);
+  let newTree = cloneTree(tree);
   const node = findNode(nodeId, newTree);
 
   if (node) {
     node.checked = false;
-    node.indeterminate = undefined;
+    node.indeterminate = false;
 
-    node.childrenNodes!.forEach((node: NodeData) => {
-      node.checked = false;
-      node.indeterminate = undefined;
-    });
+    if (node.childrenNodes) {
+      node.childrenNodes.forEach((node: NodeData) => {
+        newTree = handleNodeWasIndeterminate(node.id, newTree);
+      });
+    }
   }
   return newTree;
 };
