@@ -17,5 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     data: STORYBOOK_TREE_VIEW_DATA,
+    onNodeChange: (data) => console.log(data),
+    onTreeChange: (data) => console.log(data),
   },
 };

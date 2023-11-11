@@ -27,7 +27,7 @@
 ### 2023-11-11
 - 🟨 Create the TreeView components along with unit tests;
   - ✅ Create TreeView checkbox nodes base logic;
-  - Check data availability;
+  - 🟨 Check data availability;
   - Check behavior with disabled checkbox;
 - ✅ Fixes:
   - ✅ Fix indeterminate styles;

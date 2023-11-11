@@ -13,14 +13,24 @@ import {
 
 export type TreeViewProps = {
   data: NodeData[];
+  onNodeChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onTreeChange?: (tree: NodeData[]) => void;
 };
 
-export const TreeView = ({ data }: TreeViewProps) => {
+export const TreeView = ({
+  data,
+  onNodeChange,
+  onTreeChange,
+}: TreeViewProps) => {
   const [treeViewData, setTreeViewData] = useState<NodeData[]>([]);
 
   useEffect(() => {
     setTreeViewData(data);
   }, [data]);
+
+  useEffect(() => {
+    onTreeChange?.(treeViewData);
+  }, [treeViewData, onTreeChange]);
 
   const handleNodeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
@@ -39,6 +49,8 @@ export const TreeView = ({ data }: TreeViewProps) => {
 
       return handleNodeWasUnchecked(target.id, prevTree);
     });
+
+    onNodeChange?.(event);
   };
 
   return (
