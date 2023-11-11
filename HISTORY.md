@@ -27,10 +27,13 @@
 ### 2023-11-11
 - 🟨 Create the TreeView components along with unit tests;
   - ✅ Create TreeView checkbox nodes base logic;
+- ✅ Fixes:
   - ✅ Fix indeterminate styles;
-- ✅ Fix general styles;
-- ✅ Fix check not propagating to great-children;
-- Fix collapsible closing on parent check;
+  - ✅ Fix general styles;
+  - ✅ Fix check not propagating to great-children;
+  - ✅ Fix collapsible closing on parent check;
+- Document the components on Storybook;
+- Create Cypress tests;
 
 ## Planned steps
 
@@ -38,6 +41,7 @@
 - Document the components appropriately on Storybook
 - Create Cypress config
 - Create Cypress tests
+- Update the README to add project description and instructions on how to build the project
 
 ## Technical choices
 
@@ -51,6 +55,7 @@
 
 - Creating the TreeView logic is hard and it required some research to ensure the component kept its performance while allowing for a simple and clear code.
 - It took me a while to understand why data replication wasn't working the way I wanted. I had to refactor it and start from scratch a few times.
+- The more "direct" approach of working purely with the DOM methods and data attributes (as the chosen Design System would suggest), was left out in favor of an implementation that worked more closely with React's data structure and principles, using an object state to keep track of the changes in the checkbox tree
 
 ## Technical planning
 
