@@ -29,6 +29,7 @@
   - ✅ Create TreeView checkbox nodes base logic;
   - ✅ Fix indeterminate styles;
 - 🟨 Fix general styles;
+- 🟨 Fix check not propagating to great-children;
 - Fix collapsible closing on parent check;
 
 ## Planned steps
