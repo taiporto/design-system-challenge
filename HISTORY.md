@@ -27,12 +27,14 @@
 ### 2023-11-11
 - 🟨 Create the TreeView components along with unit tests;
   - ✅ Create TreeView checkbox nodes base logic;
+  - Check data availability;
+  - Check behavior with disabled checkbox;
 - ✅ Fixes:
   - ✅ Fix indeterminate styles;
   - ✅ Fix general styles;
   - ✅ Fix check not propagating to great-children;
   - ✅ Fix collapsible closing on parent check;
-- Document the components on Storybook;
+- 🟨 Document the components on Storybook;
 - Create Cypress tests;
 
 ## Planned steps

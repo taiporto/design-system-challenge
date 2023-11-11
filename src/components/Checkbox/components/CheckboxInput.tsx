@@ -8,7 +8,6 @@ export const CheckboxInput = (
       type="checkbox"
       aria-disabled={props.disabled}
       checked={props.checked}
-      onChange={props.onChange}
       {...props}
     />
   );

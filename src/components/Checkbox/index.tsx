@@ -16,7 +16,12 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   indeterminate = false,
   classNames,
 }: CheckboxProps): React.ReactElement => {
+  const [controlledChecked, setControlledChecked] = useState(checked);
   const htmlFor = id || name;
+
+  const handleChange = () => {
+    setControlledChecked((prevChecked) => !prevChecked);
+  };
 
   return (
     <div className={`${styles["br-checkbox"]} ${classNames}`}>
@@ -25,8 +30,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         value={value}
         name={name}
         disabled={disabled}
-        checked={checked}
-        onChange={onChange}
+        checked={onChange ? checked : controlledChecked}
+        onChange={onChange ?? handleChange}
         indeterminate={indeterminate ? indeterminate.toString() : undefined}
       />
       <label className={styles.checkboxLabel} htmlFor={htmlFor}>
