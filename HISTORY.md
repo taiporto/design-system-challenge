@@ -39,8 +39,8 @@
 
 ## Planned steps
 
-- Create the TreeView components along with unit tests
 - Document the components appropriately on Storybook
+  - Add prop descriptions
 - Create Cypress config
 - Create Cypress tests
 - Update the README to add project description and instructions on how to build the project
