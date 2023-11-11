@@ -1,6 +1,6 @@
 export type NodeData = {
+  id: string;
   label: string;
-  id?: string;
   value?: string;
   checked?: boolean;
   disabled?: boolean;

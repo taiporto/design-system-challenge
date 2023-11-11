@@ -13,12 +13,20 @@
 
 ### 2023-11-07
 
-- 🟨 Create base components to be used inside the TreeView component
+- ✅ Create base components to be used inside the TreeView component
 - 🟨 Create the TreeView components along with unit tests
 
 ### 2023-11-08
 - 🟨 Create the TreeView components along with unit tests;
   - 🟨 Create TreeView checkbox nodes logic;
+
+### 2023-11-09
+- 🟨 Create the TreeView components along with unit tests;
+  - 🟨 Create TreeView checkbox nodes logic;
+
+### 2023-11-11
+- 🟨 Create the TreeView components along with unit tests;
+  - ✅ Create TreeView checkbox nodes base logic;
 
 ## Planned steps
 
@@ -38,7 +46,7 @@
 ## Technical challenges
 
 - Creating the TreeView logic is hard and it required some research to ensure the component kept its performance while allowing for a simple and clear code.
-  - I'm having doubts about using the "React way" as a strategy for keeping track of child and parent nodes. Maybe it will be easier and more straightforward to work directly with the DOM methods.
+- It took me a while to understand why data replication wasn't working the way I wanted. I had to refactor it and start from scratch a few times.
 
 ## Technical planning
 

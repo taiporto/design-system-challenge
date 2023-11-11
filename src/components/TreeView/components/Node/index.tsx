@@ -3,7 +3,6 @@ import React, { ChangeEvent } from "react";
 import { Collapsible } from "../../../Collapsible";
 import { Checkbox } from "../../../Checkbox";
 import { NodeData } from "../../types";
-import { slugfy } from "../../../../utils/slugfy";
 
 type NodeProps = {
   nodeData: NodeData;
@@ -11,36 +10,36 @@ type NodeProps = {
 };
 
 export const Node = ({ nodeData, onChange }: NodeProps) => {
-  const groupId = `group-${nodeData.id}`;
-
-  const checkboxProps = {
-    label: nodeData.label,
-    id: nodeData.id ?? slugfy(nodeData.label),
-    value: nodeData.value ?? slugfy(nodeData.label),
-    onChange,
-  };
-
-  const CheckboxNode = {
-    single: <Checkbox {...checkboxProps} />,
-    parent: <Checkbox {...checkboxProps} data-parent={groupId} />,
-  };
-
   if (!nodeData.childrenNodes) {
-    return CheckboxNode.single;
+    return (
+      <Checkbox
+        {...nodeData}
+        value={nodeData.value ?? nodeData.id}
+        onChange={onChange}
+      />
+    );
   }
 
   return (
-    <Collapsible isOpen={false} trigger={CheckboxNode.parent}>
-      {nodeData.childrenNodes.map((node) => {
-        return (
-          <Node
-            key={node.id}
-            nodeData={node}
-            data-child={groupId}
+    <ul>
+      <Collapsible
+        isOpen={false}
+        trigger={
+          <Checkbox
+            {...nodeData}
+            value={nodeData.value ?? nodeData.id}
             onChange={onChange}
           />
-        );
-      })}
-    </Collapsible>
+        }
+      >
+        {nodeData.childrenNodes.map((node) => {
+          return (
+            <li key={node.id}>
+              <Node nodeData={node} onChange={onChange} />
+            </li>
+          );
+        })}
+      </Collapsible>
+    </ul>
   );
 };

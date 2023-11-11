@@ -1,4 +1,5 @@
 import { TreeView } from "./components/TreeView";
+import { STORYBOOK_TREE_VIEW_DATA } from "./components/TreeView/storybook/constants";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <h2>Components</h2>
         <ul>
           <li>TreeView</li>
-          <TreeView label="Test" />
+          <TreeView data={STORYBOOK_TREE_VIEW_DATA} />
         </ul>
       </div>
     </>
