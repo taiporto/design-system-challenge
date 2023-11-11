@@ -9,4 +9,5 @@ export type CheckboxProps = {
   checked?: boolean;
   disabled?: boolean;
   indeterminate?: boolean;
+  classNames?: string;
 };

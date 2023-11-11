@@ -30,9 +30,7 @@ export const Collapsible = ({
           {trigger}
         </div>
       </RadixCollapsible.Trigger>
-      <RadixCollapsible.Content className={styles["ml-8xh"]}>
-        {children}
-      </RadixCollapsible.Content>
+      <RadixCollapsible.Content>{children}</RadixCollapsible.Content>
     </RadixCollapsible.Root>
   );
 };

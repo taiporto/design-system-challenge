@@ -27,6 +27,9 @@
 ### 2023-11-11
 - 🟨 Create the TreeView components along with unit tests;
   - ✅ Create TreeView checkbox nodes base logic;
+  - ✅ Fix indeterminate styles;
+- 🟨 Fix general styles;
+- Fix collapsible closing on parent check;
 
 ## Planned steps
 

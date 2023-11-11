@@ -1,0 +1,11 @@
+@import '../../index.scss';
+@import '/node_modules/@govbr-ds/core/src/components/list/list';
+
+.treeViewList {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    list-style: none;
+  }
+}

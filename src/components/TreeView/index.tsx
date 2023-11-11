@@ -1,5 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 
+import styles from "./style.module.scss";
+
 import { Node } from "./components/Node";
 import { NodeData } from "./types";
 import {
@@ -23,28 +25,30 @@ export const TreeView = ({ data }: TreeViewProps) => {
   const handleNodeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
     const hasBeenChecked = target.checked;
+    const node = findNode(target.id, treeViewData);
+    if (!node) return;
 
     setTreeViewData((prevTree) => {
-      const node = findNode(target.id, treeViewData);
-
-      if (!node) return prevTree;
-
       if (node.indeterminate) {
         target.indeterminate = true;
         return handleNodeWasIndeterminate(target.id, prevTree);
-      } else if (hasBeenChecked) {
-        return handleNodeWasChecked(target.id, prevTree);
-      } else {
-        return handleNodeWasUnchecked(target.id, prevTree);
       }
+
+      if (hasBeenChecked) {
+        return handleNodeWasChecked(target.id, prevTree);
+      }
+
+      return handleNodeWasUnchecked(target.id, prevTree);
     });
   };
 
   return (
-    <ul>
+    <ul className={`${styles["br-list"]} ${styles["treeViewList"]}`}>
       {treeViewData.map((node) => {
         return (
-          <Node nodeData={node} onChange={handleNodeChange} key={node.id} />
+          <li className={styles["br-item"]} key={node.id}>
+            <Node nodeData={node} onChange={handleNodeChange} />
+          </li>
         );
       })}
     </ul>

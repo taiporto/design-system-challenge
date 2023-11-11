@@ -40,11 +40,11 @@ export const handleNodeWasIndeterminate = (
 
   if (node) {
     node.checked = false;
-    node.indeterminate = false;
+    node.indeterminate = undefined;
 
     node.childrenNodes!.forEach((node) => {
       node.checked = false;
-      node.indeterminate = false;
+      node.indeterminate = undefined;
     });
   }
   return newTree;
@@ -63,12 +63,13 @@ export const handleNodeWasChecked = (
     if (node.childrenNodes) {
       node.childrenNodes.forEach((node) => {
         node.checked = true;
-        node.indeterminate = false;
+        node.indeterminate = undefined;
       });
     }
 
     if (node.parentId) {
       const nodeParent = findNode(node.parentId, newTree);
+      nodeParent!.checked = true;
 
       const nodeSiblings = nodeParent?.childrenNodes!.filter(
         (node) => node.id !== nodeId
@@ -76,10 +77,8 @@ export const handleNodeWasChecked = (
       const uncheckedSiblings = nodeSiblings?.filter((node) => node.checked);
 
       if (nodeSiblings?.length === uncheckedSiblings?.length) {
-        nodeParent!.checked = true;
-        nodeParent!.indeterminate = false;
+        nodeParent!.indeterminate = undefined;
       } else {
-        nodeParent!.checked = undefined;
         nodeParent!.indeterminate = true;
       }
     }
@@ -115,9 +114,8 @@ export const handleNodeWasUnchecked = (
 
       if (nodeSiblings?.length === checkedSiblings?.length) {
         nodeParent!.checked = false;
-        nodeParent!.indeterminate = false;
+        nodeParent!.indeterminate = undefined;
       } else {
-        nodeParent!.checked = undefined;
         nodeParent!.indeterminate = true;
       }
     }

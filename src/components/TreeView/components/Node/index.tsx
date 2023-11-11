@@ -4,6 +4,8 @@ import { Collapsible } from "../../../Collapsible";
 import { Checkbox } from "../../../Checkbox";
 import { NodeData } from "../../types";
 
+import styles from "../../style.module.scss";
+
 type NodeProps = {
   nodeData: NodeData;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -16,30 +18,34 @@ export const Node = ({ nodeData, onChange }: NodeProps) => {
         {...nodeData}
         value={nodeData.value ?? nodeData.id}
         onChange={onChange}
+        classNames={styles["my-baseh"]}
       />
     );
   }
 
   return (
-    <ul>
-      <Collapsible
-        isOpen={false}
-        trigger={
-          <Checkbox
-            {...nodeData}
-            value={nodeData.value ?? nodeData.id}
-            onChange={onChange}
-          />
-        }
-      >
+    <Collapsible
+      isOpen={false}
+      trigger={
+        <Checkbox
+          {...nodeData}
+          value={nodeData.value ?? nodeData.id}
+          onChange={onChange}
+        />
+      }
+    >
+      <ul className={`${styles["br-list"]} ${styles["mb-0"]}`}>
         {nodeData.childrenNodes.map((node) => {
           return (
-            <li key={node.id}>
+            <li
+              className={`${styles["br-item"]} ${styles["pl-5x"]}`}
+              key={node.id}
+            >
               <Node nodeData={node} onChange={onChange} />
             </li>
           );
         })}
-      </Collapsible>
-    </ul>
+      </ul>
+    </Collapsible>
   );
 };

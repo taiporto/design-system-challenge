@@ -14,11 +14,12 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   disabled = false,
   onChange,
   indeterminate = false,
+  classNames,
 }: CheckboxProps): React.ReactElement => {
   const htmlFor = id || name;
 
   return (
-    <div className={styles["br-checkbox"]}>
+    <div className={`${styles["br-checkbox"]} ${classNames}`}>
       <CheckboxInput
         id={htmlFor}
         value={value}
