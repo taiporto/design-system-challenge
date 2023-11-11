@@ -4,33 +4,22 @@ export const STORYBOOK_TREE_VIEW_DATA: TreeViewProps["data"] = [
   {
     id: "languages",
     label: "Languages",
-    checked: false,
-    disabled: false,
-    indeterminate: false,
     childrenNodes: [
       {
         id: "languages-front-end",
         label: "Front-end",
         parentId: "languages",
-        checked: false,
-        disabled: false,
-        indeterminate: false,
+
         childrenNodes: [
           {
             id: "typescript",
             label: "TypeScript",
             parentId: "languages-front-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
           {
             id: "javascript",
             label: "JavaScript",
             parentId: "languages-front-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
         ],
       },
@@ -38,25 +27,17 @@ export const STORYBOOK_TREE_VIEW_DATA: TreeViewProps["data"] = [
         id: "languages-back-end",
         label: "Back-end",
         parentId: "languages",
-        checked: false,
-        disabled: false,
-        indeterminate: false,
+
         childrenNodes: [
           {
             id: "python",
             label: "Python",
             parentId: "languages-back-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
           {
             id: "ruby",
             label: "Ruby",
             parentId: "languages-back-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
         ],
       },
@@ -65,7 +46,6 @@ export const STORYBOOK_TREE_VIEW_DATA: TreeViewProps["data"] = [
   {
     id: "frameworks",
     label: "Frameworks and Libraries",
-    checked: false,
     disabled: false,
     indeterminate: false,
     childrenNodes: [
@@ -73,25 +53,17 @@ export const STORYBOOK_TREE_VIEW_DATA: TreeViewProps["data"] = [
         id: "frameworks-front-end",
         label: "Front-end",
         parentId: "frameworks",
-        checked: false,
-        disabled: false,
-        indeterminate: false,
+
         childrenNodes: [
           {
             id: "react",
             label: "React",
             parentId: "frameworks-front-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
           {
             id: "vue",
             label: "Vue.js",
             parentId: "frameworks-front-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
         ],
       },
@@ -99,25 +71,17 @@ export const STORYBOOK_TREE_VIEW_DATA: TreeViewProps["data"] = [
         id: "frameworks-back-end",
         label: "Back-end",
         parentId: "frameworks",
-        checked: false,
-        disabled: false,
-        indeterminate: false,
+
         childrenNodes: [
           {
             id: "flask",
             label: "Flask",
             parentId: "frameworks-back-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
           {
             id: "rails",
             label: "Rails",
             parentId: "frameworks-back-end",
-            checked: false,
-            disabled: false,
-            indeterminate: false,
           },
         ],
       },
