@@ -20,16 +20,16 @@ export const Collapsible = ({
 
   return (
     <RadixCollapsible.Root open={open} onOpenChange={setOpen}>
-      <RadixCollapsible.Trigger asChild>
-        <div className={`${styles["d-flex"]} ${styles["align-items-center"]}`}>
+      <div className={`${styles["d-flex"]} ${styles["align-items-center"]}`}>
+        <RadixCollapsible.Trigger asChild>
           <button
             className={`${styles["mr-1"]} ${styles["br-button"]} ${styles["circle"]}`}
           >
             {open ? <ChevronDownIcon /> : <ChevronRightIcon />}
           </button>
-          {trigger}
-        </div>
-      </RadixCollapsible.Trigger>
+        </RadixCollapsible.Trigger>
+        {trigger}
+      </div>
       <RadixCollapsible.Content>{children}</RadixCollapsible.Content>
     </RadixCollapsible.Root>
   );
