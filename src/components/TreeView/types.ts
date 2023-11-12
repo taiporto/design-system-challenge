@@ -6,7 +6,7 @@ type ElementProps<T> = T extends Element
   ? Partial<HTMLElementTagNameMap[T]>
   : never;
 
-export type PlainNode<T extends Element = "span"> = {
+export type PlainNode<T> = {
   label: string;
   tag?: T;
   childrenNodes?: PlainNode<T>[];
@@ -23,7 +23,7 @@ export type CheckboxNode = {
   childrenNodes?: CheckboxNode[];
 };
 
-export type TreeViewProps =
+export type TreeViewProps<T = Element> =
   | {
       /**
        * The type of TreeView to be rendered. Alters the type of data that can be passed to the component
@@ -48,7 +48,7 @@ export type TreeViewProps =
       /**
        * @type PlainNode: { label: string; tag?: ElementTag; childrenNodes: PlainNode[], ...ElementProps<ElementTag> }
        */
-      data: PlainNode[];
+      data: PlainNode<T>[];
       onNodeChange?: never;
       onTreeChange?: never;
     };

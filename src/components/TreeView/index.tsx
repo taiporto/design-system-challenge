@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CheckboxNode, PlainNode, TreeViewProps } from "./types";
+import { CheckboxNode, TreeViewProps } from "./types";
 import { CheckboxTreeView } from "./components/CheckboxTreeView";
 import { PlainTreeView } from "./components/PlainTreeView";
 
@@ -20,5 +20,5 @@ export const TreeView = ({
     );
   }
 
-  return <PlainTreeView data={data as PlainNode[]} />;
+  return <PlainTreeView data={data} />;
 };

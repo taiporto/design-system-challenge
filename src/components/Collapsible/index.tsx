@@ -18,6 +18,7 @@ export const Collapsible = ({
       <div className={`${styles["d-flex"]} ${styles["align-items-center"]}`}>
         <RadixCollapsible.Trigger asChild>
           <button
+            data-testid="collapsible-trigger"
             className={`${styles["mr-1"]} ${styles["br-button"]} ${styles["circle"]}`}
           >
             {open ? <ChevronDownIcon /> : <ChevronRightIcon />}
@@ -25,7 +26,10 @@ export const Collapsible = ({
         </RadixCollapsible.Trigger>
         {trigger}
       </div>
-      <RadixCollapsible.Content className={`${styles["pl-5x"]}`}>
+      <RadixCollapsible.Content
+        data-testid="collapsible-content"
+        className={`${styles["pl-5x"]}`}
+      >
         {children}
       </RadixCollapsible.Content>
     </RadixCollapsible.Root>

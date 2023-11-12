@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { TreeView } from "../index";
-import {
-  STORYBOOK_CHECKBOX_TREE_VIEW_DATA,
-  STORYBOOK_PLAIN_TREE_VIEW_DATA,
-} from "./constants";
+import { TreeView } from "./index";
+import { PLAIN_TREE_VIEW_DATA, CHECKBOX_TREE_VIEW_DATA } from "./__fixtures__";
+import { ChangeEvent } from "react";
+import { CheckboxNode } from "./types";
 
 const meta = {
   title: "Components/TreeView",
@@ -21,16 +20,15 @@ type Story = StoryObj<typeof meta>;
 export const Plain: Story = {
   args: {
     type: "plain",
-    //@ts-expect-error Storybook doesn't read generics correctly
-    data: STORYBOOK_PLAIN_TREE_VIEW_DATA,
+    data: PLAIN_TREE_VIEW_DATA,
   },
 };
 
 export const Checkbox: Story = {
   args: {
     type: "checkbox",
-    data: STORYBOOK_CHECKBOX_TREE_VIEW_DATA,
-    onNodeChange: (data) => console.log(data),
-    onTreeChange: (data) => console.log(data),
+    data: CHECKBOX_TREE_VIEW_DATA,
+    onNodeChange: (data: ChangeEvent<HTMLInputElement>) => console.log(data),
+    onTreeChange: (data: CheckboxNode[]) => console.log(data),
   },
 };
