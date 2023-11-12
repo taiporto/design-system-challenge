@@ -36,3 +36,11 @@ corepack enable;
 yarn set version berry;
 yarn install
 ```
+
+### Storybook is not showing the stories individually, only the docs for the components
+
+Remove `node_modules`, clean Yarn's cache and install the dependencies again:
+
+1. `rm -rf node_modules`
+2. `yarn cache clean`
+3. `yarn install`
