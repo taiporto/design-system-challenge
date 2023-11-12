@@ -40,10 +40,7 @@ export const CheckboxNode = ({ nodeData, onChange }: NodeProps) => {
         {nodeData.childrenNodes.map((node) => {
           if (isCheckboxDisabled) node.disabled = true;
           return (
-            <li
-              className={`${styles["br-item"]} ${styles["pl-5x"]}`}
-              key={node.id}
-            >
+            <li className={`${styles["br-item"]}`} key={node.id}>
               <CheckboxNode nodeData={node} onChange={onChange} />
             </li>
           );

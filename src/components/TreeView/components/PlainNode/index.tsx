@@ -29,13 +29,12 @@ export const PlainNode = ({
 
   return (
     <Collapsible isOpen={false} trigger={leafComponent}>
-      <ul className={`${styles["br-list"]} ${styles["mb-0"]}`}>
+      <ul
+        className={`${styles["br-list"]} ${styles["mb-0"]} ${styles["pl-0"]}`}
+      >
         {childrenNodes.map((node) => {
           return (
-            <li
-              className={`${styles["br-item"]} ${styles["pl-5x"]}`}
-              key={label}
-            >
+            <li className={`${styles["br-item"]}`} key={label}>
               <PlainNode nodeData={node} />
             </li>
           );

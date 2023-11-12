@@ -8,7 +8,6 @@ import { CheckboxProps } from "./types";
 export const Checkbox: React.FC<CheckboxProps> = ({
   id,
   value,
-  name,
   label,
   checked = false,
   disabled = false,
@@ -17,7 +16,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   classNames,
 }: CheckboxProps): React.ReactElement => {
   const [controlledChecked, setControlledChecked] = useState(checked);
-  const htmlFor = id || name;
+  const htmlFor = id || value;
 
   const handleChange = () => {
     setControlledChecked((prevChecked) => !prevChecked);
@@ -28,7 +27,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <CheckboxInput
         id={htmlFor}
         value={value}
-        name={name}
         disabled={disabled}
         checked={onChange ? checked : controlledChecked}
         onChange={onChange ?? handleChange}
