@@ -1,18 +1,17 @@
-import { NodeData } from "../types";
+import { CheckboxNode } from "../types";
 import { cloneTree } from "./cloneTree";
 import { findNode } from "./findNode";
 
 export const handleNodeWasChecked = (
-  nodeId: NodeData["id"],
-  tree: NodeData[]
-): NodeData[] => {
+  nodeId: CheckboxNode["id"],
+  tree: CheckboxNode[]
+): CheckboxNode[] => {
   let newTree = cloneTree(tree);
   const node = findNode(nodeId, newTree);
 
   if (node) {
-
     if (node.disabled) return newTree;
-    
+
     node.checked = true;
     node.indeterminate = false;
 

@@ -1,9 +1,9 @@
-import { NodeData } from "../types";
+import { CheckboxNode } from "../types";
 
 export const findNode = (
-  nodeId: NodeData["id"],
-  tree: NodeData[]
-): NodeData | undefined => {
+  nodeId: CheckboxNode["id"],
+  tree: CheckboxNode[]
+): CheckboxNode | undefined => {
   let foundNode;
   if (tree == null) return;
 

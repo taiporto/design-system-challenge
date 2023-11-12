@@ -1,6 +1,6 @@
-import { NodeData } from "../types";
+import { CheckboxNode } from "../types";
 
-export const cloneTree = (forest: NodeData[]): NodeData[] => {
+export const cloneTree = (forest: CheckboxNode[]): CheckboxNode[] => {
   return forest.map((tree) => ({
     ...tree,
     childrenNodes: tree.childrenNodes

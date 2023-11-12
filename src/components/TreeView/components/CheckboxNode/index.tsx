@@ -2,17 +2,16 @@ import React, { ChangeEvent } from "react";
 
 import { Collapsible } from "../../../Collapsible";
 import { Checkbox } from "../../../Checkbox";
-import { NodeData } from "../../types";
+import { CheckboxNode as CheckboxNodeProps } from "../../types";
 
 import styles from "../../style.module.scss";
 
 type NodeProps = {
-  nodeData: NodeData;
+  nodeData: CheckboxNodeProps;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Node = ({ nodeData, onChange }: NodeProps) => {
-
+export const CheckboxNode = ({ nodeData, onChange }: NodeProps) => {
   const isCheckboxDisabled = nodeData.disabled ?? false;
 
   if (!nodeData.childrenNodes) {
@@ -45,7 +44,7 @@ export const Node = ({ nodeData, onChange }: NodeProps) => {
               className={`${styles["br-item"]} ${styles["pl-5x"]}`}
               key={node.id}
             >
-              <Node nodeData={node} onChange={onChange} />
+              <CheckboxNode nodeData={node} onChange={onChange} />
             </li>
           );
         })}

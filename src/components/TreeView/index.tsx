@@ -1,67 +1,24 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React from "react";
 
-import styles from "./style.module.scss";
-
-import { Node } from "./components/Node";
-import { NodeData } from "./types";
-import {
-  findNode,
-  handleNodeWasChecked,
-  handleNodeWasIndeterminate,
-  handleNodeWasUnchecked,
-} from "./utils";
-
-export type TreeViewProps = {
-  data: NodeData[];
-  onNodeChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  onTreeChange?: (tree: NodeData[]) => void;
-};
+import { CheckboxNode, PlainNode, TreeViewProps } from "./types";
+import { CheckboxTreeView } from "./components/CheckboxTreeView";
+import { PlainTreeView } from "./components/PlainTreeView";
 
 export const TreeView = ({
+  type = "plain",
   data,
   onNodeChange,
   onTreeChange,
 }: TreeViewProps) => {
-  const [treeViewData, setTreeViewData] = useState<NodeData[]>([]);
+  if (type === "checkbox") {
+    return (
+      <CheckboxTreeView
+        data={data as CheckboxNode[]}
+        onNodeChange={onNodeChange}
+        onTreeChange={onTreeChange}
+      />
+    );
+  }
 
-  useEffect(() => {
-    setTreeViewData(data);
-  }, [data]);
-
-  useEffect(() => {
-    onTreeChange?.(treeViewData);
-  }, [treeViewData, onTreeChange]);
-
-  const handleNodeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { target } = event;
-    const hasBeenChecked = target.checked;
-    const node = findNode(target.id, treeViewData);
-    if (!node) return;
-
-    setTreeViewData((prevTree) => {
-      if (node.indeterminate) {
-        return handleNodeWasIndeterminate(target.id, prevTree);
-      }
-
-      if (hasBeenChecked) {
-        return handleNodeWasChecked(target.id, prevTree);
-      }
-
-      return handleNodeWasUnchecked(target.id, prevTree);
-    });
-
-    onNodeChange?.(event);
-  };
-
-  return (
-    <ul className={`${styles["br-list"]} ${styles["treeViewList"]}`}>
-      {treeViewData.map((node) => {
-        return (
-          <li className={styles["br-item"]} key={node.id}>
-            <Node nodeData={node} onChange={handleNodeChange} />
-          </li>
-        );
-      })}
-    </ul>
-  );
+  return <PlainTreeView data={data as PlainNode[]} />;
 };

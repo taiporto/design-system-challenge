@@ -39,13 +39,13 @@
 ### 2023-11-12
 - 🟨 Create the TreeView components;
   - ✅ Check behavior with disabled checkbox;
-  - Create HTML tag customization;
-  - Create acceptance of native props;
-  - Create path highlight and animations;
+  - ✅ Create HTML tag customization;
+  - ✅ Create acceptance of native props;
   - Check data availability;
+- 🟨 Document the components on Storybook;
 - Create Cypress config + tests;
-- Document the components on Storybook;
 - [Moonshot] Create loading variation for the nodes;
+- [Moonshot] Create path highlight and animations;
 
 ## Planned steps
 

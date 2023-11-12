@@ -1,5 +1,5 @@
 import { TreeView } from "./components/TreeView";
-import { STORYBOOK_TREE_VIEW_DATA } from "./components/TreeView/storybook/constants";
+import { STORYBOOK_CHECKBOX_TREE_VIEW_DATA } from "./components/TreeView/storybook/constants";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <h2>Components</h2>
         <ul>
           <li>TreeView</li>
-          <TreeView data={STORYBOOK_TREE_VIEW_DATA} />
+          <TreeView type="checkbox" data={STORYBOOK_CHECKBOX_TREE_VIEW_DATA} />
         </ul>
       </div>
     </>

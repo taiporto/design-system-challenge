@@ -1,10 +1,10 @@
-import { NodeData } from "../types";
+import { CheckboxNode } from "../types";
 import { cloneTree } from "./cloneTree";
 import { findNode } from "./findNode";
 
 export const handleNodeWasUnchecked = (
-  nodeId: NodeData["id"],
-  tree: NodeData[]
+  nodeId: CheckboxNode["id"],
+  tree: CheckboxNode[]
 ) => {
   let newTree = cloneTree(tree);
   const node = findNode(nodeId, newTree);
