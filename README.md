@@ -9,21 +9,19 @@ For technical details and implementation logs, check out the [History file](./HI
 This project is built with Vite and Yarn. To run it, follow these steps:
 
 1. Use `nvm`, `asdf`, or any other Node version management (including just installing the correct Node version from the [website](https://nodejs.org/en/download)) to ensure your Node.js version is `20.9.0`
-2. Install Yarn globally if you don't have it
-3. Run `yarn --version` to check the version that the project is using. The `.yarn/yarn-4.0.1.cjs` file should ensure that the newest Yarn is used, but if you don't see `4.0.1` as the result of the `yarn --version` command, check the [Troubleshooting](#troubleshooting) section to check how to solve it.
-4. Run `yarn install` to install all the packages
+2. Install Yarn globally if you don't have it by running `npm install yarn -g`.
+3. Run `yarn --version` to check the version that the project is using. The `.yarn/yarn-4.0.1.cjs` file should ensure that the newest Yarn is used, but if you don't see `4.0.1` as the result of the `yarn --version` command, check the [Troubleshooting](#troubleshooting) section to understand how to solve it.
+4. Run `yarn install` to install all the packages.
 
 ### Running Storybook
 
-Run `yarn run storybook`. Storybook should be available at `http://localhost:6006/`.
+Run `yarn run storybook`. Storybook should be available at [`http://localhost:6006/`](http://localhost:6006/).
 
 ### Running the index page
 
-The index page provides a minimal structure to render the TreeView component outside of the Storybook environment. To check it out, run:
+Run `yarn dev`. The index page provides a minimal structure to render the TreeView component outside of a Storybook environment.
 
-`yarn dev`
-
-The page should be available at `http://127.0.0.1:3000/`
+It should be available at [`http://127.0.0.1:3000/`](http://127.0.0.1:3000/).
 
 ## Troubleshooting
 
