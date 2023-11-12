@@ -12,6 +12,9 @@ type NodeProps = {
 };
 
 export const Node = ({ nodeData, onChange }: NodeProps) => {
+
+  const isCheckboxDisabled = nodeData.disabled ?? false;
+
   if (!nodeData.childrenNodes) {
     return (
       <Checkbox
@@ -36,6 +39,7 @@ export const Node = ({ nodeData, onChange }: NodeProps) => {
     >
       <ul className={`${styles["br-list"]} ${styles["mb-0"]}`}>
         {nodeData.childrenNodes.map((node) => {
+          if (isCheckboxDisabled) node.disabled = true;
           return (
             <li
               className={`${styles["br-item"]} ${styles["pl-5x"]}`}

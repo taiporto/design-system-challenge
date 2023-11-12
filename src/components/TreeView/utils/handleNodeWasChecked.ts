@@ -10,6 +10,9 @@ export const handleNodeWasChecked = (
   const node = findNode(nodeId, newTree);
 
   if (node) {
+
+    if (node.disabled) return newTree;
+    
     node.checked = true;
     node.indeterminate = false;
 
