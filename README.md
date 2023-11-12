@@ -1,6 +1,6 @@
 # Design System Challenge
 
-This is the solution for the [Design System Challenge](https://gist.github.com/andersonba/6b1d07348e7baaf282a27259996d6520) proposed for the evaluation of aptness for a Front-end developer position.
+This is the solution for the [Design System Challenge](https://gist.github.com/andersonba/6b1d07348e7baaf282a27259996d6520) proposed as an evaluation of aptness for a Front-end developer position.
 
 For technical details and implementation logs, check out the [History file](./HISTORY.md).
 
