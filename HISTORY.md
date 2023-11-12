@@ -67,6 +67,7 @@
 - The usage of the Radix UI checkbox primitive was considered, but since it doesn't use with the `input` element by default, although it guarantees 100% accessibility despite not using it, it was smarter to work with a default `input` + `label` element combo and use the styles already provided by the Gov.br Design System.
 - Radix UI's Collapsible was chosen because it handles aria controls over what is opened or closed by itself, ensuring accessibility standards.
 - The test mentioned a need for allowing the customization of the HTML element that the tree view node was going to be rendered as, as well as the need for passing the respective attributes to this element based on its type. Since the checkbox behavior of the tree view is very specific, this requested feature was implemented as an optional version of the whole TreeView component, as oposed to an integration to the existing checkbox version. 
+- [2023-11-12] Upgraded to Yarn 4 from Yarn Classic (1.x) due to a compatibility issue between Storybook and Cypress. Did it based on [this issue response](https://github.com/cypress-io/cypress/issues/27370#issuecomment-1649715561) and with the help of [Yarn's migration guide](https://yarnpkg.com/migration/overview) and [Yarn's Q&A](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored).
 
 ## Technical challenges
 
