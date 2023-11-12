@@ -14,21 +14,20 @@
 ### 2023-11-07
 
 - ✅ Create base components to be used inside the TreeView component
-- 🟨 Create the TreeView components along with unit tests
+- 🟨 Create the TreeView components
 
 ### 2023-11-08
-- 🟨 Create the TreeView components along with unit tests;
+- 🟨 Create the TreeView components;
   - 🟨 Create TreeView checkbox nodes logic;
 
 ### 2023-11-09
-- 🟨 Create the TreeView components along with unit tests;
+- 🟨 Create the TreeView components;
   - 🟨 Create TreeView checkbox nodes logic;
 
 ### 2023-11-11
-- 🟨 Create the TreeView components along with unit tests;
+- 🟨 Create the TreeView components;
   - ✅ Create TreeView checkbox nodes base logic;
   - 🟨 Check data availability;
-  - Check behavior with disabled checkbox;
 - ✅ Fixes:
   - ✅ Fix indeterminate styles;
   - ✅ Fix general styles;
@@ -37,13 +36,25 @@
 - 🟨 Document the components on Storybook;
 - Create Cypress tests;
 
+### 2023-11-12
+- 🟨 Create the TreeView components;
+  - Check behavior with disabled checkbox;
+  - Check data availability;
+- Document the components on Storybook;
+- Create Cypress config + tests;
+
 ## Planned steps
 
+- Create basic project configuration
+- Configure the Design System base
+- Create base components to be used inside the TreeView component
+- Create the TreeView components
 - Document the components appropriately on Storybook
   - Add prop descriptions
 - Create Cypress config
 - Create Cypress tests
 - Update the README to add project description and instructions on how to build the project
+- [Moonshot] Create unit tests for the components;
 
 ## Technical choices
 
