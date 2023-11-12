@@ -1,6 +1,6 @@
-# [Design System Challenge](https://gist.github.com/andersonba/6b1d07348e7baaf282a27259996d6520)
+# History and technical notes
 
-## History
+## Logs
 
 ✅ - Done;
 🟨 - Doing;
@@ -8,7 +8,7 @@
 ### 2023-11-06
 
 - ✅ Create basic project configuration, scaffolding a React app with Vite and including Sass and Storybook as dependencies
-- ✅ Configure the Design System base with fonts, colors and spacings -> Use [existing design system](#technical-choices) as reference
+- ✅ Configure the Design System base with fonts, colors, and spacings -> Use an [existing design system](#technical-choices) as a reference
 - 🟨 Create base components to be used inside the TreeView component
 
 ### 2023-11-07
@@ -41,15 +41,15 @@
   - ✅ Create HTML tag customization;
   - ✅ Create acceptance of native props;
 - ✅ Document the components on Storybook;
-- Create Cypress config + tests;
-- Create README documentation on how to run the project;
+- 🟨 Create Cypress config + tests;
+- ✅ Create README documentation on how to run the project;
 - [Moonshot] Create loading variation for the nodes;
-- [Moonshot] Create path highlight and animations;
+- [Moonshot] Create path highlights and animations;
 - [Moonshot] Create demo of the checkbox treeview;
 
 ## Planned steps
 
-- Create basic project configuration
+- Create a basic project configuration
 - Configure the Design System base
 - Create base components to be used inside the TreeView component
 - Create the TreeView components
@@ -63,23 +63,28 @@
 
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) is being used as a framework to keep the commits organized
 - Vite was chosen for its speed and configuration simplicity
-- Gov.br was chosen as a design system base because it is built with Sass, which makes the integration easier, and it shares a lot of the colors with the target company.
-- The usage of the Radix UI checkbox primitive was considered, but since it doesn't use with the `input` element by default, although it guarantees 100% accessibility despite not using it, it was smarter to work with a default `input` + `label` element combo and use the styles already provided by the Gov.br Design System.
+- Gov.br was chosen as a design system base because it is built with Sass, which makes the integration easier, and it shares a lot of the colors with the target company for the test.
+- The usage of the Radix UI's Checkbox primitive was considered, but since it doesn't use with the `input` element by default, although it guarantees 100% accessibility despite not using it, it was smarter to work with a default `input` + `label` element combo and use the styles already provided by the Gov.br Design System.
 - Radix UI's Collapsible was chosen because it handles aria controls over what is opened or closed by itself, ensuring accessibility standards.
-- The test mentioned a need for allowing the customization of the HTML element that the tree view node was going to be rendered as, as well as the need for passing the respective attributes to this element based on its type. Since the checkbox behavior of the tree view is very specific, this requested feature was implemented as an optional version of the whole TreeView component, as oposed to an integration to the existing checkbox version. 
+- The test mentioned a need for allowing the customization of the HTML element that the tree view node was going to be rendered as, as well as the need for passing the respective attributes to this element based on its type. Since the checkbox behavior of the tree view is very specific, this requested feature was implemented as an optional version of the whole TreeView component, as opposed to as an integration to the existing checkbox version. 
 - [2023-11-12] Upgraded to Yarn 4 from Yarn Classic (1.x) due to a compatibility issue between Storybook and Cypress. Did it based on [this issue response](https://github.com/cypress-io/cypress/issues/27370#issuecomment-1649715561) and with the help of [Yarn's migration guide](https://yarnpkg.com/migration/overview) and [Yarn's Q&A](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored).
-- Did not fully implement component tests because of the time constraint. They were implemented, but couldn't actually be tested due to some misconfiguration of cypress that kept the tests endlesly loading.
-- Did not implement visual tests because of the time constraint. If I had time, I would do as follows:
-  - Create visual tests for the Checkbox component asserting the look of the indeterminate state
-- Did not implement tests for all the sub components because of the time constraint.
 
 ## Technical challenges
 
-- Creating the TreeView logic is hard and it required some research to ensure the component kept its performance while allowing for a simple and clear code.
-- It took me a while to understand why data replication wasn't working the way I wanted. I had to refactor it and start from scratch a few times.
-- The more "direct" approach of working purely with the DOM methods and data attributes (as the chosen Design System would suggest), was left out in favor of an implementation that worked more closely with React's data structure and principles, using an object state to keep track of the changes in the checkbox tree
+- Creating the TreeView logic was hard and it required some research to ensure the component kept its performance while allowing for a simple and clear code.
+- It took me a while to understand why data replication wasn't working the way I wanted for the tree view checkboxes. I had to refactor it and start from scratch a few times.
+- The more "direct" approach of working purely with the DOM methods and data attributes (as the chosen Design System would suggest) for the tree view was left out in favor of an implementation that worked more closely with React's data structure and principles, using an object state to keep track of the changes in the checkbox tree.
 
-## Technical planning
+### Time constraint limitations
+
+- Did not fully implement component tests. They were implemented, but couldn't run due to some misconfiguration of Cypress that kept all of the tests endlessly loading.
+- Did not implement tests for all the sub-components.
+- Did not implement visual tests. If I had time, I would do as follows:
+  - Create visual tests for the Checkbox component asserting the look of the indeterminate state
+- Did not implement e2e tests.
+- Did not implement animations and state indications.
+
+## Technical notes
 
 - Expected behavior of tree view nodes:
   - Parent node:
@@ -114,7 +119,7 @@
       - If the parent was previously `checked === true`:
         - The parent should now have an `indeterminate` attribute set to it
         - The parent should now be `checked === undefined`
-      - If the parent was previoulsy `indeterminate`:
+      - If the parent was previously `indeterminate`:
         - Check if all of the child's node siblings are unchecked:
           - If yes, change the parent to `checked === false` and remove its indeterminate attribute
           - If no, make no changes to the parent
