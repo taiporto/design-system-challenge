@@ -27,7 +27,7 @@
 ### 2023-11-11
 - 🟨 Create the TreeView components;
   - ✅ Create TreeView checkbox nodes base logic;
-  - 🟨 Check data availability;
+  - ✅ Check data availability;
 - ✅ Fixes:
   - ✅ Fix indeterminate styles;
   - ✅ Fix general styles;
@@ -42,8 +42,10 @@
   - ✅ Create acceptance of native props;
 - ✅ Document the components on Storybook;
 - Create Cypress config + tests;
+- Create README documentation on how to run the project;
 - [Moonshot] Create loading variation for the nodes;
 - [Moonshot] Create path highlight and animations;
+- [Moonshot] Create demo of the checkbox treeview;
 
 ## Planned steps
 
@@ -56,7 +58,6 @@
 - Create Cypress config
 - Create Cypress tests
 - Update the README to add project description and instructions on how to build the project
-- [Moonshot] Create unit tests for the components;
 
 ## Technical choices
 
