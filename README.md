@@ -10,7 +10,7 @@ This project is built with Vite and Yarn. To run it, follow these steps:
 
 1. Use `nvm`, `asdf`, or any other Node version management (including just installing the correct Node version from the [website](https://nodejs.org/en/download)) to ensure your Node.js version is `20.9.0`
 2. Install Yarn globally if you don't have it by running `npm install yarn -g`.
-3. Run `yarn --version` to check the version that the project is using. The `.yarn/yarn-4.0.1.cjs` file should ensure that the newest Yarn is used, but if you don't see `4.0.1` as the result of the `yarn --version` command, check the [Troubleshooting](#troubleshooting) section to understand how to solve it.
+3. Run `yarn --version` inside the project's folder to check the version that the project is using. The `.yarn/yarn-4.0.1.cjs` file should ensure that the newest Yarn is used, but if you don't see `4.0.1` as the result of the `yarn --version` command, check the [Troubleshooting](#troubleshooting) section to understand how to solve it.
 4. Run `yarn install` to install all the packages.
 
 ### Running Storybook
